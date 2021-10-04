@@ -3,7 +3,7 @@ let randomNumber = Math.floor(Math.random() * 20) + 1;
 
 const guesses = document.querySelector('.guesses');
 const lastResult = document.querySelector('.lastResult');
-const lowOrHi = document.querySelector('.lowOrHi');
+const highorlow = document.querySelector('.highorlow');
 
 const guessSubmit = document.querySelector('.guessSubmit');
 const guessField = document.querySelector('.guessField');
@@ -24,21 +24,21 @@ function checkGuess() {
   if (userGuess === randomNumber) {
     lastResult.textContent = 'Nailed it!';
     lastResult.style.backgroundColor = 'green';
-    lowOrHi.textContent = '';
+    highorlow.textContent = '';
     setGameOver();
   } else if (guessCount === 4) {
     lastResult.textContent = 'You lost';
-    lowOrHi.textContent = '';
+    highorlow.textContent = '';
     setGameOver();
   } else {
     lastResult.textContent = 'Nope! Guess Again..';
     lastResult.style.backgroundColor = 'yellow';
     if(userGuess < randomNumber) {
-      lowOrHi.textContent = 'Thats too low';
-      lowOrHi.style.backgroundColor = 'aqua'
+      highorlow.textContent = 'Thats too low';
+      highorlow.style.backgroundColor = 'aqua'
     } else if(userGuess > randomNumber) {
-      lowOrHi.textContent = 'Thats too high!';
-      lowOrHi.style.backgroundColor = 'tomato'
+      highorlow.textContent = 'Thats too high!';
+      highorlow.style.backgroundColor = 'tomato'
     }
   }
   
@@ -92,7 +92,7 @@ for (let i = 0 ; i < resetParas.length ; i++) {
 
 guesses.style.boxShadow = '2px 2px 6px black';
 lastResult.style.boxShadow = '3px 3px 6px black';
-lowOrHi.style.boxShadow = '3px 3px 6px black';
+highorlow.style.boxShadow = '3px 3px 6px black';
 
 
 
