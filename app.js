@@ -64,7 +64,7 @@ function setGameOver() {
 
 function resetGame() {
     guessCount = 1;
-  
+ 
 
     const resetParas = document.querySelectorAll('.resultParas p');
     for (let i = 0 ; i < resetParas.length ; i++) {
@@ -82,7 +82,7 @@ function resetGame() {
     lastResult.style.backgroundColor = 'white';
 
 
-    randomNumber = Math.floor(Math.random() * 100) + 1;
+    randomNumber = Math.floor(Math.random() * 20) + 1;
 }
 
 const resetParas = document.querySelectorAll('.resultParas p');
@@ -95,7 +95,10 @@ lastResult.style.boxShadow = '3px 3px 6px black';
 highorlow.style.boxShadow = '3px 3px 6px black';
 
 
-
+console.log(randomNumber);
+console.log(guessCount);
+console.log(checkGuess);
+console.log(guessField);
 
 
 
