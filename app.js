@@ -8,6 +8,11 @@ const highorlow = document.querySelector('.highorlow');
 const guessSubmit = document.querySelector('.guessSubmit');
 const guessField = document.querySelector('.guessField');
 
+
+const bigbrain = document.getElementById('bigbrain');
+const retort = document.getElementById('retort');
+
+
 let guessCount = 1;
 let resetButton;
 guessField.focus();
@@ -22,10 +27,10 @@ function checkGuess() {
     guesses.textContent += userGuess + ' ';
 
     if (userGuess === randomNumber) {
-        lastResult.textContent = 'Nailed it!';
+        lastResult.textContent = 'CHECK OUT THE BIG BRAIN ON BRAD';
         lastResult.style.backgroundColor = 'green';
         highorlow.textContent = '';
-        setGameOver();
+        bigbrain.wav = Audio.getElementById('bigbrain');
     } else if (guessCount === 4) {
         lastResult.textContent = 'You lost';
         highorlow.textContent = '';
@@ -59,6 +64,22 @@ function setGameOver() {
     document.body.append(resetButton);
     resetButton.addEventListener('click', resetGame);
     resetButton.style.marginLeft = '365px';
+    resetButton.addEventListener('click', play);
+    retort.wav = Audio.getElementById('retort');
+    
+
+
+}
+
+function play() {
+    var retort = document.getElementById('retort');
+    retort.play();
+    onclick(play);
+}
+function play1() {
+    var bigbrain = document.getElementById('bigbrain');
+    bigbrain.play1();
+    onclick(play1);
 }
 
 
