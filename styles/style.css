@@ -24,3 +24,11 @@ html {
     font-weight: bold;
     font-family: 'Permanent Marker', cursive;
 }
+
+#retort {
+    visibility: hidden;
+}
+
+#bigbrain {
+    visibility: hidden;
+}
