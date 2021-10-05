@@ -41,7 +41,7 @@ function checkGuess() {
             highorlow.style.backgroundColor = 'tomato';
         }
     }
-  
+ 
     guessCount++;
     guessField.value = '';
     guessField.focus();
