@@ -6,6 +6,8 @@ const highorlow = document.querySelector('.highorlow');
 const guessSubmit = document.querySelector('.guessSubmit');
 const guessField = document.querySelector('.guessField');
 const retort = document.getElementById('retort');
+const remainingGuessElement = document.getElementById('remaining-text');
+let remainingGuess = 3;
 let guessCount = 1;
 let resetButton;
 guessField.focus();
@@ -17,7 +19,6 @@ function checkGuess() {
         guesses.style.backgroundColor = 'violet';
     }
     guesses.textContent += userGuess + ' ';
-
     if (userGuess === randomNumber) {
         lastResult.textContent = 'CHECK OUT THE BIG BRAIN ON BRAD';
         lastResult.style.backgroundColor = 'green';
@@ -37,7 +38,9 @@ function checkGuess() {
             highorlow.style.backgroundColor = 'tomato';
         }
     }
- 
+        remainingGuessElement.textContent = remainingGuess;
+        
+    remainingGuess--;
     guessCount++;
     guessField.value = '';
     guessField.focus();
@@ -56,9 +59,7 @@ function setGameOver() {
     resetButton.style.marginLeft = '365px';
     resetButton.addEventListener('click', play);
     retort.wav = Audio.getElementById('retort');
-    
-
-
+    remainingGuess = 4;
 }
 
 function play() {
@@ -91,4 +92,5 @@ for (let i = 0 ; i < resetParas.length ; i++) {
 guesses.style.boxShadow = '2px 2px 6px black';
 lastResult.style.boxShadow = '3px 3px 6px black';
 highorlow.style.boxShadow = '3px 3px 6px black';
+
 
