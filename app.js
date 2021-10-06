@@ -1,22 +1,14 @@
 
 let randomNumber = Math.floor(Math.random() * 20) + 1;
-
 const guesses = document.querySelector('.guesses');
 const lastResult = document.querySelector('.lastResult');
 const highorlow = document.querySelector('.highorlow');
-
 const guessSubmit = document.querySelector('.guessSubmit');
 const guessField = document.querySelector('.guessField');
-
-
-const bigbrain = document.getElementById('bigbrain');
 const retort = document.getElementById('retort');
-
-
 let guessCount = 1;
 let resetButton;
 guessField.focus();
-
 
 function checkGuess() {
     let userGuess = Number(guessField.value);
@@ -30,7 +22,6 @@ function checkGuess() {
         lastResult.textContent = 'CHECK OUT THE BIG BRAIN ON BRAD';
         lastResult.style.backgroundColor = 'green';
         highorlow.textContent = '';
-        bigbrain.wav = Audio.getElementById('bigbrain');
     } else if (guessCount === 4) {
         lastResult.textContent = 'You lost';
         highorlow.textContent = '';
@@ -54,7 +45,6 @@ function checkGuess() {
 
 guessSubmit.addEventListener('click', checkGuess);
 
-
 function setGameOver() {
     guessField.disabled = true;
     guessSubmit.disabled = true;
@@ -76,33 +66,20 @@ function play() {
     retort.play();
     onclick(play);
 }
-function play1() {
-    var bigbrain = document.getElementById('bigbrain');
-    bigbrain.play1();
-    onclick(play1);
-}
-
 
 function resetGame() {
     guessCount = 1;
  
-
     const resetParas = document.querySelectorAll('.resultParas p');
     for (let i = 0 ; i < resetParas.length ; i++) {
         resetParas[i].textContent = '';
     }
 
     resetButton.parentNode.removeChild(resetButton);
-
-
     guessField.disabled = false;
     guessSubmit.disabled = false;
     guessField.value = '';
-  
-
     lastResult.style.backgroundColor = 'white';
-
-
     randomNumber = Math.floor(Math.random() * 20) + 1;
 }
 
@@ -114,13 +91,4 @@ for (let i = 0 ; i < resetParas.length ; i++) {
 guesses.style.boxShadow = '2px 2px 6px black';
 lastResult.style.boxShadow = '3px 3px 6px black';
 highorlow.style.boxShadow = '3px 3px 6px black';
-
-
-console.log(randomNumber);
-console.log(guessCount);
-console.log(checkGuess);
-console.log(guessField);
-
-
-
 

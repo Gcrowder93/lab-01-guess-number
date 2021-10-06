@@ -14,36 +14,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <audio controls="controls" id="bigbrain" src='assets/big_brain.wav'></audio>
     <audio controls="controls" id="retort" src='assets/retort.wav'></audio>
-
     <title>Guessing A Number</title>
 </head>
-
 <body>
-
-    
     <main>
-    <h1>Number Guessing Game!</h1>
+      <h1>Number Guessing Game!</h1>
 
-    <p>Here you will have 4 chances to guess a number between 1 and 20. Each guess will result in a hint of 'too high' or 'too low'. After 4 guesses, if you have not chosen the correct number, it's game over my friend. Lucky Guessing!</p>
+        <p>Here you will have 4 chances to guess a number between 1 and 20. Each guess will result in a hint of 'too high' or 'too low'. After 4 guesses, if you have not chosen the correct number, it's game over my friend. Lucky Guessing!</p>
     
     <label for="guessField" id="Field">Enter a guess: </label><br>
     <input type="number" id="guessField" min="1" max="20" class="guessField"><br>
     <input type="submit" value="Submit guess" class="guessSubmit">
 
-    
-
-    <div class="resultParas">
+    <div
+     class="resultParas">
         <p class="guesses"></p>
         <p class="lastResult"></p>
         <p class="highorlow"></p>
-       
-      </div>
-    
+    </div>
 </main>
-  
     <footer></footer>
-
     <script type="module" src="./app.js"></script>
 </body>
-
 </html>
