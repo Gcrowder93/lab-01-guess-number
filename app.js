@@ -8,13 +8,16 @@ const guessSubmit = document.querySelector('.guessSubmit');
 const guessField = document.querySelector('.guessField');
 const retort = document.getElementById('retort');
 const remainingGuessElement = document.getElementById('remaining-text');
-const winSpan = document.getElementById('wins');
-const lossSpan = document.getElementById('losses');
 let wins = 0;
 let losses = 0;
 let remainingGuess = 3;
 let guessCount = 1;
 let resetButton;
+// Part of track wins/losses
+// const winSpanfunc = document.getElementById('wins');
+// const lossSpanfunc = document.getElementById('losses');
+// let winSpanfunc = 0;
+// let lossSpanfunc = 0;
 guessField.focus();
 
 console.log(randomNumber);
@@ -67,7 +70,12 @@ function setGameOver() {
     resetButton.addEventListener('click', play);
     retort.wav = Audio.getElementById('retort');
     remainingGuess = 4;
-    
+    // part of track wins losses
+    // if (userGuess === randomNumber){
+    //     return wins++;
+    //     } else (guessCount > 4);{
+    //     return losses++;
+    //     }
 }
 
 function play() {

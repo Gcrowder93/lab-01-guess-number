@@ -9,9 +9,9 @@ export function compareNumbers(guess, correctNumber){
 }
 
 export function winLoss(wins, losses){
-    if (lastResult.text === 'CHECK OUT THE BIG BRAIN ON BRAD'){
+    if (wins === random){
     return wins++;
-    } else (lastResult.text === 'You lost');{
+    } else (guesscount > 4);{
     return losses++;
     }
 }
