@@ -1,4 +1,5 @@
 
+import { winLoss } from './test/functions.js';
 let randomNumber = Math.floor(Math.random() * 20) + 1;
 const guesses = document.querySelector('.guesses');
 const lastResult = document.querySelector('.lastResult');
@@ -7,10 +8,16 @@ const guessSubmit = document.querySelector('.guessSubmit');
 const guessField = document.querySelector('.guessField');
 const retort = document.getElementById('retort');
 const remainingGuessElement = document.getElementById('remaining-text');
+const winSpan = document.getElementById('wins');
+const lossSpan = document.getElementById('losses');
+let wins = 0;
+let losses = 0;
 let remainingGuess = 3;
 let guessCount = 1;
 let resetButton;
 guessField.focus();
+
+console.log(randomNumber);
 
 function checkGuess() {
     let userGuess = Number(guessField.value);
@@ -60,6 +67,7 @@ function setGameOver() {
     resetButton.addEventListener('click', play);
     retort.wav = Audio.getElementById('retort');
     remainingGuess = 4;
+    
 }
 
 function play() {
